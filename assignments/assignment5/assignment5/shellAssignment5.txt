@@ -1,0 +1,321 @@
+Q1)
+
+Q1.sh
+#!/bin/bash
+
+#login name
+echo "Your login name is: $LOGNAME"
+
+# home directory
+echo "Your home directory is: $HOME"
+
+
+Q2)
+
+Q2.sh
+#!/bin/bash
+
+while true; do
+    # Display menu
+    echo "Menu:"
+    echo "1. Date"
+    echo "2. Cal"
+    echo "3. Ls"
+    echo "4. Pwd"
+    echo "5. Exit"
+    
+    # Prompt for user choice
+    read -p "Enter your choice: " choice
+    
+    case $choice in
+        1) date;;
+        2) cal;;
+        3) ls;;
+        4) pwd;;
+        5) echo "Exiting..."; exit;;
+        *) echo "Invalid choice. Please enter a number between 1 and 5.";;
+    esac
+done
+
+chmod +x Q2.sh
+
+Q3)
+
+#!/bin/bash
+
+# Ask for input
+read -p "Enter a file or directory name: " name
+
+# Check if name exists
+if [ -e "$name" ]; then
+    # Check if it's a file
+    if [ -f "$name" ]; then
+        # To display file size
+        echo "The file '$name' exists and its size is $(du -h "$name" | cut -f1)"
+    # To Check if it's a directory
+    elif [ -d "$name" ]; then
+        # Display directory contents
+        echo "The directory '$name' exists and its contents are:"
+        ls -l "$name"
+    else
+        # If it's neither a file nor a directory
+        echo "The name '$name' exists but it is neither a file nor a directory."
+    fi
+else
+    # If the name doesn't exist
+    echo "The name '$name' does not exist."
+fi
+
+Q3.sh
+
+Q4)
+
+#!/bin/bash
+
+# Function to check number prime or not
+is_prime() {
+    num=$1
+    # If number is less than 2, it's not prime
+    if [ $num -lt 2 ]; then
+        echo "$num is not prime."
+        return
+    fi
+    # Check divisibility from 2 to square root of the number
+    for ((i=2; i*i<=num; i++)); do
+        if [ $((num % i)) -eq 0 ]; then
+            echo "$num is not prime."
+            return
+        fi
+    done
+    # If no divisor found, it's prime
+    echo "$num is prime."
+}
+
+# Ask for input
+read -p "Enter a number: " number
+
+# Function Calling the is_prime function
+is_prime $number
+
+Q4.sh
+
+Q5)
+
+#!/bin/bash
+
+# Function to find greatest of three numbers
+find_greatest() {
+    if [ $1 -gt $2 ] && [ $1 -gt $3 ]; then
+        echo "$1 is the greatest."
+    elif [ $2 -gt $1 ] && [ $2 -gt $3 ]; then
+        echo "$2 is the greatest."
+    else
+        echo "$3 is the greatest."
+    fi
+}
+
+# Ask for input
+read -p "Enter the first number: " num1
+read -p "Enter the second number: " num2
+read -p "Enter the third number: " num3
+
+# Calling function the find_greatest function
+find_greatest $num1 $num2 $num3
+
+
+Q6)
+
+#!/bin/bash
+
+# Function to check year leap year or not
+is_leap_year() {
+    year=$1
+    if [ $((year % 4)) -eq 0 ] && [ $((year % 100)) -ne 0 ] || [ $((year % 400)) -eq 0 ]; then
+        echo "$year is a leap year."
+    else
+        echo "$year is not a leap year."
+    fi
+}
+
+# Ask for input
+read -p "Enter a year: " year
+
+# Calling the function is_leap_year function
+is_leap_year $year
+
+Q7)
+
+#!/bin/bash
+
+# Function to determine whether a number is positive or negative
+check_sign() {
+    if [ $1 -gt 0 ]; then
+        echo "$1 is positive."
+    elif [ $1 -lt 0 ]; then
+        echo "$1 is negative."
+    else
+        echo "$1 is neither positive nor negative (it's zero)."
+    fi
+}
+
+# Ask for input
+read -p "Enter a number: " number
+
+# function calling
+check_sign $number
+
+Q8)
+
+#!/bin/bash
+
+# Function to print the table of given number
+print_table() {
+    number=$1
+    echo "Table of $number:"
+    for ((i=1; i<=10; i++)); do
+        echo "$number x $i = $((number * i))"
+    done
+}
+
+# ask for input
+read -p "Enter a number: " number
+
+# function Calling
+print_table $number
+
+Q9)
+
+#!/bin/bash
+
+# Function to calculate the factorial of given number
+factorial() {
+    num=$1
+    fact=1
+    for ((i=1; i<=num; i++)); do
+        fact=$((fact * i))
+    done
+    echo "The factorial of $num is: $fact"
+}
+
+# Ask for input
+read -p "Enter a number: " number
+
+# function Calling
+factorial $number
+
+Q10)
+
+#!/bin/bash
+
+# Function to print Fibonacci series up to a given number
+fibonacci() {
+    num_terms=$1
+    # Assume First two terms of Fibonacci series
+    a=0
+    b=1
+    echo "Fibonacci series up to $num_terms terms:"
+    # Print first two terms
+    echo -n "$a $b "
+    # Loop to generate the terms
+    for ((i=2; i<num_terms; i++)); do
+        next=$((a + b))
+        echo -n "$next "
+        a=$b
+        b=$next
+    done
+    echo ""  # Newline
+}
+
+# Ask for input
+read -p "Enter the number of terms in the Fibonacci series: " num_terms
+
+# function Calling
+fibonacci $num_terms
+
+Q11)
+
+#!/bin/bash
+
+# Function to calculate gross salary
+calculate_gross_salary() {
+    basic_salary=$1
+    # Calculate DA (40% of basic salary)
+    da=$(echo "scale=2; $basic_salary * 0.4" | bc)
+    # Calculate HRA (20% of basic salary)
+    hra=$(echo "scale=2; $basic_salary * 0.2" | bc)
+    # Calculate gross salary (Basic + DA + HRA)
+    gross_salary=$(echo "scale=2; $basic_salary + $da + $hra" | bc)
+    echo "Gross salary: $gross_salary"
+}
+
+# Ask for input
+read -p "Enter basic salary: " basic_salary
+
+# function Calling
+calculate_gross_salary $basic_salary
+
+Q13)
+#!/bin/bash
+
+# to Display hidden files from current directory
+for file in .*; do
+    # command to Exclude '.' and '..' which tell us the current and parent directories
+    if [ "$file" != "." ] && [ "$file" != ".." ]; then
+        echo "$file"
+    fi
+done
+
+Q14)
+#!/bin/bash
+
+# to Display executable files from current directory
+for file in *; do
+    if [ -x "$file" ] && [ -f "$file" ]; then
+        echo "$file"
+    fi
+done
+
+
+Q15)
+
+#!/bin/bash
+
+# Function to convert text to reverse case
+reverse_case() {
+    tr '[:upper:][:lower:]' '[:lower:][:upper:]'
+}
+
+# Ask for input
+read -p "Enter the name of the first file: " file1
+read -p "Enter the name of the second file: " file2
+
+# Check if the first file exists
+if [ ! -f "$file1" ]; then
+    echo "Error: The first file '$file1' does not exist."
+    exit 1
+fi
+
+# Read contents of the first file, convert to reverse case, and append to the second file
+reverse_case < "$file1" >> "$file2"
+
+echo "Contents of '$file1' appended in reverse case to '$file2'."
+
+
+Q17)
+#!/bin/bash
+
+# Function to print pattern
+print_pattern() {
+    for ((i=1; i<=5; i++)); do
+        for ((j=1; j<=i; j++)); do
+            echo -n "* "
+        done
+        echo ""
+    done
+}
+
+# function calling
+print_pattern
+
+
+remaining 16,12

@@ -1,0 +1,135 @@
+Qustion 1.
+
+Ans -> 
+a. No of words
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ wc -w data.txt
+25 data.txt
+
+b. No of Characters
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ wc -m data.txt
+145 data.txt
+
+c.No of Lines
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ wc -l data.txt
+6 data.txt
+
+d. NO of Characters from above 2 lines
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ head -2 data.txt | wc -c
+50
+
+e.NO of Lines from above 2 lines
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ head -2 data.txt | wc -l
+2
+
+f.NO of Words from above 2 lines
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ head -2 data.txt | wc -w
+9
+
+********************************************************************************************************************************************************************************
+
+Qustion 2.
+
+Ans -> 
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ grep -n "files" data.txt
+3:files have permissions.
+4:files have inode no.
+5:files have size.
+6:there are several types of files
+
+********************************************************************************************************************************************************************************
+
+Qustion 3.
+
+Ans -> 
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ grep -n "files" data.txt
+3:files have permissions.
+4:files have inode no.
+5:files have size.
+6:there are several types of files
+
+********************************************************************************************************************************************************************************
+
+Qustion 4.
+
+Ans -> 
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ grep -v "files" data.txt
+Linux is open source.
+In Linux everything is file
+
+
+********************************************************************************************************************************************************************************
+
+Qustion 5.
+
+Ans -> 
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ grep -n  "^f" data.txt
+3:files have permissions.
+4:files have inode no.
+5:files have size.
+
+
+********************************************************************************************************************************************************************************
+
+Qustion 6.
+
+Ans -> 
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ grep -n "have" data.txt
+3:files have permissions.
+4:files have inode no.
+5:files have size.
+
+
+********************************************************************************************************************************************************************************
+
+Qustion 7.
+
+Ans -> 
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ grep -n  ".$" data.txt
+1:Linux is open source.
+2:In Linux everything is file
+3:files have permissions.
+4:files have inode no.
+5:files have size.
+6:there are several types of files
+
+********************************************************************************************************************************************************************************
+
+Qustion 8.
+
+Ans -> 
+
+ssunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$2$ head -2 data.txt
+Linux is open source.
+In Linux everything is file
+
+
+********************************************************************************************************************************************************************************
+
+Qustion 9.
+
+Ans -> 
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ tail -3 data.txt
+files have inode no.
+files have size.
+there are several types of files
+
+********************************************************************************************************************************************************************************
+
+Qustion 10.
+
+Ans -> 
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment2$ head -5 data.txt | tail -3 
+files have permissions.
+files have inode no.
+files have size.
+
+
+

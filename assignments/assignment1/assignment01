@@ -1,0 +1,210 @@
+Qustion 1.
+
+Ans -> 
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls -S
+natsu.png  499955.jpg  sasuke.jpg  naruto.jpg
+
+********************************************************************************************************************************************************************************
+
+Qustion 2.
+
+Ans -> 
+	sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls --size
+total 3580
+ 500 499955.jpg         120 naruto.jpg   472 sasuke.jpg
+   4 Assignment01.txt  2484 natsu.png
+   
+   OR
+   
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls -s
+total 3580
+ 500 499955.jpg         120 naruto.jpg   472 sasuke.jpg
+   4 Assignment01.txt  2484 natsu.png
+
+	sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls -ltr
+total 3580
+-rwxr-xr-x 1 sunbeam sunbeam  510346 Dec 22 15:33 499955.jpg
+-rw-rw-r-- 1 sunbeam sunbeam  120735 Apr 25 15:28 naruto.jpg
+-rw-rw-r-- 1 sunbeam sunbeam 2542093 Apr 25 15:30 natsu.png
+-rw-rw-r-- 1 sunbeam sunbeam  481796 Apr 28 18:47 sasuke.jpg
+-rw-rw-r-- 1 sunbeam sunbeam    1325 May 20 18:06 Assignment01.txt
+
+	OR
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls -lt
+total 3580
+-rw-rw-r-- 1 sunbeam sunbeam    1325 May 20 18:06 Assignment01.txt
+-rw-rw-r-- 1 sunbeam sunbeam  481796 Apr 28 18:47 sasuke.jpg
+-rw-rw-r-- 1 sunbeam sunbeam 2542093 Apr 25 15:30 natsu.png
+-rw-rw-r-- 1 sunbeam sunbeam  120735 Apr 25 15:28 naruto.jpg
+-rwxr-xr-x 1 sunbeam sunbeam  510346 Dec 22 15:33 499955.jpg
+
+********************************************************************************************************************************************************************************
+
+Qustion 3.
+
+Ans -> 
+	sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls --inode
+4985881 499955.jpg        5003023 naruto.jpg  5003025 sasuke.jpg
+5003041 Assignment01.txt  5003024 natsu.png
+
+	OR
+	
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls -i
+4985881 499955.jpg        5003023 naruto.jpg  5003025 sasuke.jpg
+4988461 Assignment01.txt  5003024 natsu.png
+
+
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls -li
+total 3580
+4985881 -rwxr-xr-x 1 sunbeam sunbeam  510346 Dec 22 15:33 499955.jpg
+4988461 -rw-rw-r-- 1 sunbeam sunbeam    2337 May 20 18:11 Assignment01.txt
+5003023 -rw-rw-r-- 1 sunbeam sunbeam  120735 Apr 25 15:28 naruto.jpg
+5003024 -rw-rw-r-- 1 sunbeam sunbeam 2542093 Apr 25 15:30 natsu.png
+5003025 -rw-rw-r-- 1 sunbeam sunbeam  481796 Apr 28 18:47 sasuke.jpg
+
+
+********************************************************************************************************************************************************************************
+
+Qustion 4.
+
+Ans -> 
+	sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls -d */
+Assignment_01/  Assignment_05/
+
+********************************************************************************************************************************************************************************
+
+Qustion 5.
+
+Ans -> 
+	1.
+		sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ cat > Slayer
+Ahire Shantanu
+	
+	2.
+		sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ cat >> Slayer 
+Maharashtra , Nashik-42201
+
+********************************************************************************************************************************************************************************
+
+Qustion 6.
+
+Ans -> 
+
+Current Time Stamp :
+	ls -lt Slayer
+	-rw-rw-r-- 1 sunbeam sunbeam 41 May 20 18:29 Slayer
+
+Changed Time Stamp :
+	
+	touch -t 202005271430 Slayer
+	
+	sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ ls -lt Slayer
+-rw-rw-r-- 1 sunbeam sunbeam 41 May 27  2020 Slayer
+
+********************************************************************************************************************************************************************************
+
+Qustion 7.
+
+Ans -> 
+	sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ mkdir one
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ cd one 
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ touch 1.txt 11.txt 111.txt
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ mkdir two
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ cd two
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ touch 2.txt 22.txt 222.txt
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ mkdir three
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ cd three
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ touch 3.txt 33.txt 333.txt
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ mkdir four
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ cd four
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ touch 4.txt 44.txt 444.txt
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ mkdir five
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ cd five
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ touch 5.txt 55.txt 555.txt
+sunbeam@sunbeam-akshada:~/personal data/OS_SDM/assignments/assignment1$ cd ~
+
+********************************************************************************************************************************************************************************
+
+Qustion 8.
+
+Ans -> 
+
+1.
+sunbeam@akshada:~$  ls /home/sunbeam/Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/four/five
+555.txt  55.txt  5.txt
+
+2.
+sunbeam@akshada:~$ $ cat >> /home/sunbeam/Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/four/44.txt
+Ahire Shantanu
+
+3.
+
+sunbeam@akshada:~$  rm /home/sunbeam/Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/four/five/555.txt
+
+4.
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01$ cd one/two/three/four/five
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/four/five$
+
+5.
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/four/five$ cd ../../
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three$ cat >> 3.txt
+DACsunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three$ cat 3.txt
+DAC
+
+6.
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/four/five$ ls ../../../
+222.txt  22.txt  2.txt  three
+
+
+7.
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/four/five$ rm ../../../222.txt
+
+
+8.
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/four/five$ cd ../../../../
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one$
+
+
+9.
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one$ rm two/three/four/five/5.txt
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one$ rm two/three/four/five/55.txt
+
+
+10.
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one$ rmdir two/three/four/five
+
+
+11.
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one$ rm -r two/three/four
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one$ ls two/three/four
+ls: cannot access 'two/three/four': No such file or directory
+
+
+12.
+
+sunbeam@akshada:~$ /Documents/PERSONAL_DATA/OS/Assignment-01/one$ cd ~
+sunbeam@akshada:~$ 
+
+********************************************************************************************************************************************************************************
+
+Qustion 9.
+
+Ans -> 
+	sunbeam@akshada:~$ touch -t 202005271430 /home/sunbeam/Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/3.txt
+
+Changed Time Stamp:
+
+sunbeam@akshada:~$  ls -lt /home/sunbeam/Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/3.txt
+-rw-rw-r-- 1 sunbeam sunbeam 3 May 27  2020 /home/sunbeam/Documents/PERSONAL_DATA/OS/Assignment-01/one/two/three/3.txt
+
+
